@@ -1,0 +1,92 @@
+import { ArrowLeft, UserRound } from "lucide-react";
+import Image from "next/image";
+import Link from "next/link";
+
+export default function Register() {
+    return (
+        <div className="min-h-screen bg-[#0b0c13] text-white flex items-center justify-center p-6 relative font-sans overflow-hidden">
+            {/* Background glow effects (optional subtle touches to match the premium dark UI) */}
+            <div className="absolute top-0 left-0 w-full h-full bg-[radial-gradient(circle_at_0%_0%,rgba(20,30,60,0.4),transparent_50%)] pointer-events-none" />
+
+            {/* Back button */}
+            <Link href="/" className="absolute top-8 left-8 text-gray-500 hover:text-white transition-colors z-10">
+                <ArrowLeft size={28} strokeWidth={1.5} />
+            </Link>
+
+            <div className="w-full max-w-[1300px] grid grid-cols-1 lg:grid-cols-[auto_1fr] gap-12 lg:gap-24 items-center relative z-10 w-[95%]">
+
+                {/* Left Side Form container */}
+                <div className="w-full max-w-[380px] flex flex-col mx-auto lg:ml-8 mt-12 lg:mt-0">
+                    <h1 className="text-[3.5rem] font-bold mb-8 tracking-tight text-white leading-tight">Welcome</h1>
+
+                    {/* Tabs */}
+                    <div className="flex gap-10 mb-10 text-[0.95rem] font-semibold tracking-wide border-b border-transparent">
+                        <button className="text-gray-400/80 hover:text-white transition-colors pb-1">LOGIN</button>
+                        <div className="relative pb-1 border-b-[3px] border-[#3192f1] text-[#f8f8f8]">
+                            SIGNUP
+                            {/* Soft glow for the active tab */}
+                            <div className="absolute -bottom-[3px] left-0 w-full h-[3px] bg-[#3192f1] blur-[4px] opacity-70" />
+                        </div>
+                    </div>
+
+                    {/* Form */}
+                    <form className="flex flex-col gap-5">
+                        <input
+                            type="text"
+                            placeholder="FUllName"
+                            className="w-full bg-transparent border border-gray-600/70 rounded-[14px] px-5 py-[1.1rem] text-[0.85rem] text-gray-300 placeholder-gray-500 focus:outline-none focus:border-[#3192f1] focus:ring-1 focus:ring-[#3192f1]/50 transition-all font-medium"
+                        />
+
+                        <input
+                            type="email"
+                            placeholder="Email"
+                            className="w-full bg-transparent border border-gray-600/70 rounded-[14px] px-5 py-[1.1rem] text-[0.85rem] text-gray-300 placeholder-gray-500 focus:outline-none focus:border-[#3192f1] focus:ring-1 focus:ring-[#3192f1]/50 transition-all font-medium"
+                        />
+
+                        <input
+                            type="password"
+                            placeholder="password"
+                            className="w-full bg-transparent border border-gray-600/70 rounded-[14px] px-5 py-[1.1rem] text-[0.85rem] text-gray-300 placeholder-gray-500 focus:outline-none focus:border-[#3192f1] focus:ring-1 focus:ring-[#3192f1]/50 transition-all font-medium"
+                        />
+
+                        <input
+                            type="password"
+                            placeholder="repeat the password"
+                            className="w-full bg-transparent border border-gray-600/70 rounded-[14px] px-5 py-[1.1rem] text-[0.85rem] text-gray-300 placeholder-gray-500 focus:outline-none focus:border-[#3192f1] focus:ring-1 focus:ring-[#3192f1]/50 transition-all font-medium"
+                        />
+
+                        <div className="relative">
+                            <input
+                                type="text"
+                                placeholder="UserName"
+                                className="w-full bg-transparent border border-gray-600/70 rounded-[14px] px-5 py-[1.1rem] text-[0.85rem] text-gray-300 placeholder-gray-500 focus:outline-none focus:border-[#3192f1] focus:ring-1 focus:ring-[#3192f1]/50 transition-all font-medium pr-12"
+                            />
+                            <UserRound className="absolute right-5 top-1/2 -translate-y-1/2 text-white" size={16} fill="white" strokeWidth={1} />
+                        </div>
+
+                        <div className="mt-8 ml-4">
+                            <button
+                                type="button"
+                                className="bg-[#3aa3fc] hover:bg-[#2c8ee6] active:scale-95 text-white text-[0.95rem] font-medium rounded-[14px] px-[3.25rem] py-[0.7rem] transition-all"
+                            >
+                                Confirm
+                            </button>
+                        </div>
+                    </form>
+                </div>
+
+                {/* Right Side Image */}
+                <div className="hidden lg:block w-full h-[88vh] max-h-[900px] relative rounded-[2.5rem] overflow-hidden shadow-2xl">
+                    <Image
+                        src="/mystical-bg.png"
+                        alt="Mystical blue scene"
+                        fill
+                        className="object-cover"
+                        priority
+                        quality={100}
+                    />
+                </div>
+            </div>
+        </div>
+    );
+}
