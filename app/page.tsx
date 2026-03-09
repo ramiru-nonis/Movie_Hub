@@ -64,7 +64,7 @@ export default function Home() {
 
         <div className="max-w-2xl">
           <h1 className="text-[3.5rem] md:text-[4.5rem] font-bold text-[#0f172a] leading-[1.1] tracking-tight mb-2">
-            Mission Imposible
+            Mission Impossible
           </h1>
           <h2 className="text-2xl font-medium text-[#334155] mb-6">
             Dead Reckoning <span className="text-lg font-normal text-gray-500">(Part One)</span>
@@ -99,7 +99,7 @@ export default function Home() {
           <div className="flex items-center gap-5">
             <button className="bg-[#3aa3fc] hover:bg-[#2c8ee6] shadow-lg shadow-blue-500/30 text-white font-medium px-6 py-3 rounded-full flex items-center gap-2 transition-all active:scale-95 text-sm">
               <Play size={16} fill="white" />
-              Whatch Movie
+              Watch Movie
             </button>
             <button className="bg-transparent border border-gray-400 hover:border-gray-800 text-[#0f172a] font-medium px-6 py-3 text-sm rounded-full flex items-center gap-2 transition-all active:scale-95">
               More Info
