@@ -15,9 +15,27 @@ export interface Movie {
     id: number;
     title: string;
     poster_path: string | null;
+    backdrop_path: string | null;
     release_date: string;
     vote_average: number;
     overview: string;
+    runtime?: number;
+    genres?: { id: number; name: string }[];
+}
+
+export interface CastMember {
+    id: number;
+    name: string;
+    character: string;
+    profile_path: string | null;
+}
+
+export interface Video {
+    id: string;
+    key: string;
+    name: string;
+    site: string;
+    type: string;
 }
 
 export const getTrendingMovies = async (): Promise<Movie[]> => {
@@ -30,6 +48,21 @@ export const searchMovies = async (query: string): Promise<Movie[]> => {
     const response = await tmdbClient.get('/search/movie', {
         params: { query },
     });
+    return response.data.results;
+};
+
+export const getMovieDetails = async (id: string): Promise<Movie> => {
+    const response = await tmdbClient.get(`/movie/${id}`);
+    return response.data;
+};
+
+export const getMovieCredits = async (id: string): Promise<CastMember[]> => {
+    const response = await tmdbClient.get(`/movie/${id}/credits`);
+    return response.data.cast;
+};
+
+export const getMovieVideos = async (id: string): Promise<Video[]> => {
+    const response = await tmdbClient.get(`/movie/${id}/videos`);
     return response.data.results;
 };
 

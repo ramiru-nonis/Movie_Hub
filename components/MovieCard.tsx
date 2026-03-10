@@ -1,4 +1,5 @@
 import Image from 'next/image';
+import Link from 'next/link';
 import { Plus } from 'lucide-react';
 import { Movie, getImageUrl } from '@/lib/tmdb';
 
@@ -10,7 +11,7 @@ export function MovieCard({ movie }: { movie: Movie }) {
     const rating = movie.vote_average ? movie.vote_average.toFixed(1) : 'N/A';
 
     return (
-        <div className="relative group w-full aspect-[2/3] rounded-2xl overflow-hidden shadow-xl bg-gray-900 cursor-pointer flex-shrink-0">
+        <Link href={`/movie/${movie.id}`} className="block relative group w-full aspect-[2/3] rounded-2xl overflow-hidden shadow-xl bg-gray-900 cursor-pointer flex-shrink-0">
 
             {/* Plus Button Top Left (Matching the design) */}
             <div className="absolute top-2 left-2 z-20 bg-black/60 backdrop-blur-md p-1.5 rounded-lg opacity-90 hover:opacity-100 hover:bg-black/80 transition-all border border-white/20">
@@ -37,6 +38,6 @@ export function MovieCard({ movie }: { movie: Movie }) {
                     </span>
                 </div>
             </div>
-        </div>
+        </Link>
     );
 }
