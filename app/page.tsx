@@ -1,6 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { Search, Bell, User, Moon, Play, ArrowRight, Star, StarHalf } from "lucide-react";
+import { TrendingMovies } from "@/components/TrendingMovies";
 
 export default function Home() {
   return (
@@ -109,8 +110,13 @@ export default function Home() {
         </div>
       </main>
 
+      {/* Spacer to push content below the 100vh hero section */}
+      <div className="relative z-30 pt-16 bg-gradient-to-b from-transparent to-[#fdfdfd]">
+        <TrendingMovies />
+      </div>
+
       {/* Angle Decoration and Thumbnails at the bottom right */}
-      <div className="absolute bottom-0 right-0 w-full h-[500px] pointer-events-none overflow-hidden z-20">
+      <div className="absolute top-[80vh] right-0 w-full h-[500px] pointer-events-none overflow-hidden z-20 hidden lg:block">
         {/* Angled cut graphic from the design */}
         <div className="absolute right-0 bottom-0 w-[60%] h-[120%] bg-gradient-to-t from-gray-200/90 via-gray-100/50 to-transparent rotate-[35deg] origin-bottom-right translate-x-[20%] translate-y-[10%] backdrop-blur-sm shadow-2xl" />
 
