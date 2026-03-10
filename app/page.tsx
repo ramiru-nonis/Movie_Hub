@@ -2,6 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { Search, Bell, User, Moon, Play, ArrowRight, Star, StarHalf } from "lucide-react";
 import { TrendingMovies } from "@/components/TrendingMovies";
+import { SearchBar } from "@/components/SearchBar";
 
 export default function Home() {
   return (
@@ -49,7 +50,7 @@ export default function Home() {
 
           {/* Right Icons */}
           <div className="flex items-center gap-6 text-[#334155]">
-            <button className="hover:text-black transition-colors"><Search size={20} strokeWidth={2} /></button>
+            <SearchBar />
             <button className="relative hover:text-black transition-colors">
               <Bell size={20} strokeWidth={2} />
               <div className="absolute top-0 right-0 w-[8px] h-[8px] bg-pink-500 rounded-full border-2 border-white/50 translate-x-1/2 -translate-y-1/2"></div>
